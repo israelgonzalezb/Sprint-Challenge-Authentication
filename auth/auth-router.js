@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const secrets = require("../config/secrets.js");
+const router = require('express').Router(); //routes built out
+const bcrypt = require("bcryptjs"); //hash functions added in /register and /login endpoints below 
+const jwt = require("jsonwebtoken"); //genToken function added to create jwt
+const secrets = require("../config/secrets.js"); //added secrets config file
 
-const Users = require("../users/users-model.js");
+const Users = require("../users/users-model.js"); //users-model built out
 
 
 
@@ -13,8 +13,8 @@ router.post('/register', async (req, res) => {
     let user = req.body;
 
     //has our pw before storing it
-    //const hash = bcrypt(user.password, 10);
-    //user.password = hash;
+    const hash = bcrypt.hashSync(user.password, 10);
+    user.password = hash;
 
     // using async await here for db method
     const newUser = await Users.add(user);

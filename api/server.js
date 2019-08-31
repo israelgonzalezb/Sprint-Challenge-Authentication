@@ -27,6 +27,11 @@ server.use(
     })
   );
 
+  // first jest test
+  server.get('/', (req, res) => {
+    res.status(200).json({ api: 'running' });
+  });
+
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 

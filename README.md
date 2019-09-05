@@ -16,7 +16,7 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
+- [x] Create a forked copy of this project.
 - [ ] Add your _Team Lead_ as collaborator on Github.
 - [ ] Clone your forked version of the Repository.
 - [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
@@ -39,12 +39,16 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
+    - Sessions help us track a user's state across requests as they use our app. It allows us to also store that state in different types of stores like memory, databases, cookies, etc.
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+    - The bycrptjs library allows us to has passwords so as to be able to securely store them and transmit them between our machine and the client. Bcrypt will take an item and hash it then apply a signature that can be used to tell if the hased item is legitimate. Only we have the signature that allows us to decode and create new requests.
 
 - [ ] What does bcrypt do to slow down attackers?
+    - Bcrypt allows us to salt the hashes it processes to better protect agains rainbow table attacks. A rainbow table is a list of precomputed hashed passwords that can be serched for common items. By salting our passwords, we add an extra layer of security, forcing the attacker to need both the hash and the salt to decode our secret.
 
 - [ ] What are the three parts of the JSON Web Token?
+    - A JWT is a JSON object that consists of a header, a payload and a signature.
 
 ## Minimum Viable Product
 
